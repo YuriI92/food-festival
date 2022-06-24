@@ -9,7 +9,7 @@ module.exports = {
         tickets: './assets/js/tickets.js'
     },
     output: {
-        path: __dirname + '/dist',
+        path: __dirname + 'dist',
         filename: '[name].bundle.js'
     },
     module: {
@@ -45,5 +45,12 @@ module.exports = {
             analyzerMode: 'static', // the report outputs to an HTML file in the dist folder
         })
     ],
+    devServer: {
+        static: {
+            directory: __dirname + '/'
+        },
+        compress: true,
+        port: 8080
+    },
     mode: 'development'
 };
